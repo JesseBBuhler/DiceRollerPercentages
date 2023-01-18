@@ -13,12 +13,12 @@ namespace DiceRollerPercentages
         {
             numRolls = inNumRolls;
             Random rnd = new Random();
-            for (int i = 0; i < numRolls; i++)
+            for (int i = 0; i < numRolls; i++) //rolling however many sets of dice the user selected
             {
-                int roll1 = rnd.Next(6) + 1;
-                int roll2 = rnd.Next(6) + 1;
+                int roll1 = rnd.Next(6) + 1; // Rolling 6 sided die.  +1 shifts from base 0 to (1-6)
+                int roll2 = rnd.Next(6) + 1; // ^ditto
                 int total = roll1 + roll2;
-                rollLog[total - 2] = rollLog[total - 2] + 1;
+                rollLog[total - 2] = rollLog[total - 2] + 1; //total - 2 shifts the die rolls (2-12) down to fit in the base 0 array (0-10)
             }
 
 
@@ -29,12 +29,12 @@ namespace DiceRollerPercentages
             for (int i = 0; i < 11; i++)
             {
                 string starString = "";
-                int percentage = (rollLog[i] * 100)/ numRolls;
+                int percentage = (rollLog[i] * 100)/ numRolls; // Calculating percentage rolled for each possible result
                 for (int j = 0; j < percentage; j++)
                 {
-                    starString = starString + "*";
+                    starString = starString + "*"; //appending *s to the string for each percentage point of each result
                 }
-                Console.WriteLine((i + 2) + ":\t" + starString);
+                Console.WriteLine((i + 2) + ":\t" + starString); // i + 2 converts from base 0 array back to (2-12) dice rolls.
             }
         }
     }
