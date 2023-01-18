@@ -34,7 +34,7 @@ namespace DiceRollerPercentages
                 {
                     starString = starString + "*";
                 }
-                Console.WriteLine((i + 2) + ": " + starString);
+                Console.WriteLine((i + 2) + ":\t" + starString);
             }
         }
     }

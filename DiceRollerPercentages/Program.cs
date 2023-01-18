@@ -8,7 +8,7 @@ namespace DiceRollerPercentages
         {
             int numRolls = 0;
             Console.WriteLine("Welcome to the dice throwing simulator!\n");
-            Console.WriteLine("How many dice rolls would you like to simulate? ");
+            Console.Write("How many dice rolls would you like to simulate? ");
             if (int.TryParse(Console.ReadLine(), out numRolls))
             {
                 Console.WriteLine("\nDICE ROLLING SIMULATION RESULTS");
